@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+body,
+body *,
+body::before,
+body::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--green-4);
+  overflow-x: hidden;
+}
+body,
+button,
+input {
+  font-size: 16px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+  max-height: calc(100vh - 92px);
+
+  @media (max-width: 480px) {
+    max-height: calc(100vh - 88px);
+  }
+}
+.listTitle {
+  font-size: 20px;
+  padding: 16px 16px 0;
+  font-weight: 500;
+  margin: 0;
+
+  span {
+    background: var(--green-2);
+    color: var(--green-4);
+    border-radius: 6px;
+    padding: 0 8px;
+  }
+}
+.list {
+  list-style-type: none;
+  padding: 8px;
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  & > li {
+    padding: 8px;
+    width: 100%;
+    float: left;
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      width: 50%;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      width: 33.3333%;
+    }
+    @media (min-width: 1025px) and (max-width: 1300px) {
+      width: 25%;
+    }
+    @media (min-width: 1301px) and (max-width: 1600px) {
+      width: 20%;
+    }
+    @media (min-width: 1601px) and (max-width: 1900px) {
+      width: calc(100%/6);
+    }
+    @media (min-width: 1901px) {
+      width: calc(100%/7);
+    }
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topOverlay {
+  z-index: 1001;
+}
+.confirmContainer,
+.editForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1002;
+}
+.confirmContainer {
+  width: 160px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px;
+}
+.confirmTitle {
+  text-align: center;
+}
+.confirmButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+
+  button {
+    width: calc(50% - 8px);
+  }
+}
+.errorWrapper {
+  background: #fff;
+  border-radius: 6px;
+  color: #dc3545;
+  font-size: 20px;
+  padding: 16px;
+  font-weight: 500;
+}
+.cursorDefault {
+  cursor: default;
+}
+
+:root {
+  --green-0: #445435;
+  --green-1: #546742;
+  --green-2: #7F9A64;
+  --green-3: #E7ECDE;
+  --green-4: #FFFEF7;
+}

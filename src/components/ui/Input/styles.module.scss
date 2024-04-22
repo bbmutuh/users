@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 19px;
+  position: relative;
+}
+.label {
+  font-size: 12px;
+  line-height: 1;
+  padding-bottom: 4px;
+}
+.input {
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0 11px;
+  background: var(--green-3);
+  outline: 0 none;
+}
+.hasError {
+  border-color: #dc3545;
+}
+.error {
+  color: #dc3545;
+  font-size: 12px;
+  padding-top: 2px;
+  position: absolute;
+  top: 100%;
+}

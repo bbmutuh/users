@@ -1,0 +1,33 @@
+.button {
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.fullWidth {
+  width: 100%;
+}
+.onlyIcon {
+  padding: 0;
+}
+.size-small {
+  height: 24px;
+  min-width: 24px;
+  font-size: 14px;
+
+  img {
+    max-width: 20px;
+  }
+}
+.size-medium {
+  height: 36px;
+  min-width: 36px;
+}
+.size-large {
+  height: 48px;
+  min-width: 48px;
+}

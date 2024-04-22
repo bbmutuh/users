@@ -1,0 +1,63 @@
+.item {
+  box-shadow:  0 0 0 1px var(--green-3);
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+
+  a {
+    color: var(--green-2);
+
+    &:hover {
+      color: var(--green-1);
+    }
+  }
+}
+.isLogged {
+  box-shadow:  0 0 0 3px var(--green-1);
+}
+.header {
+  background: #E7ECDE;
+  padding: 0 8px 0 12px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.isAdmin {
+  .header {
+    background: var(--green-2);
+    color: var(--green-4);
+  }
+}
+.buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+.body {
+  padding: 8px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+}
+.overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+.icon {
+  filter: invert(57%) sepia(25%) saturate(508%) hue-rotate(47deg) brightness(95%) contrast(88%);
+}
+.mail {
+  transform: scale(.82);
+}
+.company {
+  transform: scale(.88);
+}
+.money {
+  transform: scale(.84);
+}

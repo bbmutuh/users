@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "user",
+      "name": "Mykhailo",
+      "surname": "Saliuk",
+      "mail": "mutuh@otpusk.com",
+      "password": "111",
+      "company": "Otpusk",
+      "money": 5000
+    },
+    {
+      "id": 2,
+      "role": "admin",
+      "name": "Petro",
+      "surname": "Poroshenko",
+      "mail": "skarb@roshen.ua",
+      "password": "222",
+      "company": "Roshen",
+      "money": 3000000
+    },
+    {
+      "id": 3,
+      "role": "user",
+      "name": "Jacky",
+      "surname": "Chan",
+      "mail": "j-chan@huawei.ch",
+      "password": "333",
+      "company": "Huawei",
+      "money": 15000
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.loginLabel {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.wrapper {
+  position: relative;
+}
+.highIndex {
+  z-index: 1000;
+}
+.dropdown {
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  width: 260px;
+  background: #fff;
+  border-radius: 6px;
+  color: #333;
+  padding: 12px;
+
+  @media (max-width: 480px) {
+    top: calc(100% + 16px);
+  }
+}
+.profile {
+  margin-bottom: 12px;
+  box-shadow:  0 0 0 1px var(--green-3);
+}

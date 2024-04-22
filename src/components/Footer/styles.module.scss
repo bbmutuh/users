@@ -1,0 +1,15 @@
+.footer {
+  font-size: 14px;
+  background: var(--green-2);
+  color: var(--green-4);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  align-items: baseline;
+  height: 36px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
