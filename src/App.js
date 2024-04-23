@@ -26,6 +26,9 @@ function App() {
   const [editIsOpen, setEditIsOpen] = useState(false);
   const [loggedId, setLoggedId] = useState(JSON.parse(localStorage.getItem('loggedId')));
 
+  const loggedUser = users.find(users => users.id === loggedId) || [];
+  const isAdmin = loggedUser.role === 'admin';
+
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -42,12 +45,6 @@ function App() {
     }
     setTimeout(() => fetchItems(), 1000);
   }, [users])
-
-  const loggedUser = users.find(users => users.id === loggedId) || [];
-  const isAdmin = loggedUser.role === 'admin';
-  const filteredUsers = users.filter(item => (
-    (`${item.name} ${item.surname} ${item.company} ${item.mail}`).toLowerCase()
-  ));
 
   const setUserObjFunc = (obj) => {
     setUserObj(obj);
