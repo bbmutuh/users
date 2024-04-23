@@ -1,0 +1,59 @@
+.topOverlay {
+  z-index: 1001;
+}
+.chartWrapper,
+.errorWrapper,
+.confirmContainer,
+.editForm {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1002;
+}
+.chartWrapper,
+.errorWrapper,
+.confirmContainer {
+  background: var(--green-4);
+  border-radius: 6px;
+}
+.editForm {
+  width: 284px;
+}
+.confirmContainer {
+  width: 160px;
+  padding: 16px;
+}
+.confirmTitle {
+  text-align: center;
+}
+.confirmButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+
+  button {
+    width: calc(50% - 8px);
+  }
+}
+.errorWrapper {
+  color: #dc3545;
+  font-size: 20px;
+  padding: 16px;
+  font-weight: 500;
+  max-width: calc(100vw - 32px);
+}
+.chartWrapper {
+  width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0 26px;
+}
+.cursorDefault {
+  cursor: default;
+}

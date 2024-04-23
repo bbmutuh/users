@@ -7,10 +7,12 @@ const Header = (
     setUserObjFunc,
     users,
     loginIsOpen,
+    chartIsOpen,
     loggedUser,
     handleLogin,
     toggleLoginOverlay,
     toggleConfirmOverlay,
+    toggleChartOverlay,
     toggleEditOverlay
   }) => {
   return (<header className={Styles.header}>
@@ -28,10 +30,12 @@ const Header = (
       setUserObjFunc={setUserObjFunc}
       users={users}
       loginIsOpen={loginIsOpen}
+      chartIsOpen={chartIsOpen}
       loggedUser={loggedUser}
       handleLogin={handleLogin}
       toggleLoginOverlay={toggleLoginOverlay}
       toggleConfirmOverlay={toggleConfirmOverlay}
+      toggleChartOverlay={toggleChartOverlay}
       toggleEditOverlay={toggleEditOverlay}
     />
   </header>)

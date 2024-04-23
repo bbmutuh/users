@@ -17,6 +17,7 @@ const Login = (
     handleLogin,
     toggleLoginOverlay,
     toggleConfirmOverlay,
+    toggleChartOverlay,
     toggleEditOverlay,
   }) => {
   const [mail, setMail] = useState('');
@@ -62,11 +63,20 @@ const Login = (
       ) : (
         <div className={Styles.loginLabel} onClick={toggleLoginOverlay}>Увійти</div>
       )}
+      <Button
+        icon={ICONS.CHART}
+        bgColor="var(--green-1)"
+        bgColorHover="var(--green-0)"
+        bgColorActive="var(--green-1)"
+        iconColor="invert(100%) sepia(100%) saturate(0%) hue-rotate(186deg) brightness(105%) contrast(101%)"
+        iconColorHover="invert(100%) sepia(100%) saturate(0%) hue-rotate(186deg) brightness(105%) contrast(101%)"
+        onClick={toggleChartOverlay}
+      />
       <div className={classnames(Styles.wrapper, {
         [Styles.highIndex]: loginIsOpen
       })}>
         <Button
-          icon={ICONS.PERSON}
+          icon={loggedUser.id ? ICONS.PERSON : ICONS.LOGIN}
           bgColor="var(--green-1)"
           bgColorHover="var(--green-0)"
           bgColorActive="var(--green-1)"
@@ -112,7 +122,6 @@ const Login = (
               validatePassword(password);
             }}>
               <Input
-                autoFocus
                 label="Email"
                 id="loginEmail"
                 type="text"

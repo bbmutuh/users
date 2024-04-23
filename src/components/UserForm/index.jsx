@@ -14,7 +14,8 @@ const UserForm = (
     title,
     users,
     submitLabel,
-    handleSubmit
+    handleSubmit,
+    toCreate
   }) => {
   const [surname, setSurname] = useState(user.surname || '');
   const [surnameError, setSurnameError] = useState(false);
@@ -26,6 +27,8 @@ const UserForm = (
   const [companyError, setCompanyError] = useState(false);
   const [password, setPassword] = useState(user.password || '');
   const [passwordError, setPasswordError] = useState(false);
+  const [money, setMoney] = useState(user.money || '');
+  const [moneyError, setMoneyError] = useState(false);
 
   const handleSurnameChange = (event) => {
     const result = event.target.value.replace(/[^a-zа-яії']/gi, '');
@@ -36,6 +39,11 @@ const UserForm = (
     const result = event.target.value.replace(/[^a-zа-яії']/gi, '');
 
     setName(result);
+  };
+  const handleMoneyChange = (event) => {
+    const result = event.target.value.replace(/[^0-9']/gi, '');
+
+    setMoney(Number(result));
   };
 
   const validateSurname = (value) => {
@@ -89,7 +97,37 @@ const UserForm = (
       && mailError === ''
       && companyError === ''
       && passwordError === '') {
-      handleSubmit()
+       if (toCreate) {
+         const newUser = {
+           id: 0,
+           role: 'user',
+           name: name,
+           surname: surname,
+           mail: mail,
+           password: password,
+           company: company,
+           money: money || 0
+         };
+         setName('');
+         setSurname('');
+         setMail('');
+         setPassword('');
+         setCompany('');
+         setMoney('');
+         handleSubmit(newUser);
+       } else {
+         const editedUser = {
+           id: user.id,
+           role: user.role,
+           name: name,
+           surname: surname,
+           mail: mail,
+           password: password,
+           company: company,
+           money: user.money
+         };
+         handleSubmit(editedUser);
+       }
     }
   }, [surnameError, nameError, mailError, companyError, passwordError]);
 
@@ -111,7 +149,7 @@ const UserForm = (
         className={Styles.input}
         type="text"
         id="surname"
-        placeholder="Прізвище"
+        label="Прізвище"
         value={surname}
         errorMessage={surnameError}
         onChange={handleSurnameChange}
@@ -120,7 +158,7 @@ const UserForm = (
         className={Styles.input}
         type="text"
         id="name"
-        placeholder="Ім'я"
+        label="Ім'я"
         value={name}
         errorMessage={nameError}
         onChange={handleNameChange}
@@ -129,7 +167,7 @@ const UserForm = (
         className={Styles.input}
         type="text"
         id="email"
-        placeholder="Email"
+        label="Email"
         value={mail}
         errorMessage={mailError}
         onChange={(e) => setMail(e.target.value)}
@@ -138,7 +176,7 @@ const UserForm = (
         className={Styles.input}
         type="text"
         id="company"
-        placeholder="Компанія"
+        label="Компанія"
         value={company}
         errorMessage={companyError}
         onChange={(e) => setCompany(e.target.value)}
@@ -147,11 +185,20 @@ const UserForm = (
         className={Styles.input}
         type="password"
         id="password"
-        placeholder="Пароль"
+        label="Пароль"
         value={password}
         errorMessage={passwordError}
         onChange={(e) => setPassword(e.target.value)}
       />
+      {toCreate && <Input
+        className={Styles.input}
+        type="text"
+        id="money"
+        label="Грошей витрачено"
+        value={money}
+        errorMessage={moneyError}
+        onChange={handleMoneyChange}
+      />}
       <Button
         fullWidth
         color="var(--green-4)"

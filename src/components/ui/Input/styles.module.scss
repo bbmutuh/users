@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   position: relative;
 }
 .label {
@@ -26,4 +26,9 @@
   padding-top: 2px;
   position: absolute;
   top: 100%;
+}
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }

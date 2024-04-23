@@ -38,6 +38,7 @@ const User = (
           role={user.role}
           onClick={()=> {
             toggleConfirmOverlay();
+            setUserObjFunc(user);
           }}
         />}
       </div>
@@ -57,7 +58,9 @@ const User = (
       </div>
       <div className={Styles.row}>
         <Icon src={ICONS.MONEY} className={classnames(Styles.icon, Styles.money)} />
-        <span className={Styles.overflow} title="Грошей витрачено">{numberWithSpaces(user.money)} ₴</span>
+        <span className={Styles.overflow} title="Грошей витрачено">
+          {numberWithSpaces(user.money)} ₴
+        </span>
       </div>
     </div>
   </div>)

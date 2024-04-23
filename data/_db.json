@@ -8,7 +8,7 @@
       "mail": "skarb@roshen.ua",
       "password": "222",
       "company": "Roshen",
-      "money": 100000
+      "money": 3000000
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "mail": "mutuh@otpusk.com",
       "password": "111",
       "company": "Otpusk",
-      "money": 10000
+      "money": 5000
     },
     {
       "id": 3,
@@ -29,16 +29,6 @@
       "password": "333",
       "company": "Huawei",
       "money": 15000
-    },
-    {
-      "id": 4,
-      "role": "user",
-      "name": "Guy",
-      "surname": "Random",
-      "mail": "random@mail.com",
-      "password": "42523523",
-      "company": "Google",
-      "money": 75000
     }
   ]
 }

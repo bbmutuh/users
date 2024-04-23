@@ -55,9 +55,38 @@ ol {
     padding: 0 8px;
   }
 }
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.search {
+  padding: 0 16px 0 8px;
+
+  * {
+    margin: 0;
+  }
+  input {
+    height: 24px;
+    padding: 0 6px;
+  }
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 50%;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    padding: 16px 16px 0;
+
+    input {
+      height: 36px;
+    }
+  }
+}
 .list {
   list-style-type: none;
   padding: 8px;
+  position: relative;
 
   &::after {
     content: '';
@@ -68,80 +97,27 @@ ol {
     padding: 8px;
     width: 100%;
     float: left;
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      width: 50%;
-    }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      width: 33.3333%;
-    }
-    @media (min-width: 1025px) and (max-width: 1300px) {
-      width: 25%;
-    }
-    @media (min-width: 1301px) and (max-width: 1600px) {
-      width: 20%;
-    }
-    @media (min-width: 1601px) and (max-width: 1900px) {
-      width: calc(100%/6);
-    }
-    @media (min-width: 1901px) {
-      width: calc(100%/7);
-    }
   }
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 999;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.topOverlay {
-  z-index: 1001;
-}
-.confirmContainer,
-.editForm {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 1002;
-}
-.confirmContainer {
-  width: 160px;
-  background: #fff;
-  border-radius: 6px;
-  padding: 16px;
-}
-.confirmTitle {
-  text-align: center;
-}
-.confirmButtons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-top: 16px;
-
-  button {
-    width: calc(50% - 8px);
+.list > li {
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 50%;
   }
-}
-.errorWrapper {
-  background: #fff;
-  border-radius: 6px;
-  color: #dc3545;
-  font-size: 20px;
-  padding: 16px;
-  font-weight: 500;
-}
-.cursorDefault {
-  cursor: default;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 33.3333%;
+  }
+  @media (min-width: 1025px) and (max-width: 1300px) {
+    width: 25%;
+  }
+  @media (min-width: 1301px) and (max-width: 1600px) {
+    width: 20%;
+  }
+  @media (min-width: 1601px) and (max-width: 1900px) {
+    width: calc(100%/6);
+  }
+  @media (min-width: 1901px) {
+    width: calc(100%/7);
+  }
 }
 
 :root {

@@ -2,7 +2,19 @@ import classnames from 'classnames';
 
 import Styles from './styles.module.scss';
 
-const Input = ({ label, id, className, value, type, onChange, errorMessage, autoFocus, placeholder }) => {
+const Input = (
+  {
+    label,
+    id,
+    className,
+    value,
+    type,
+    role,
+    onChange,
+    errorMessage,
+    autoFocus,
+    placeholder
+  }) => {
   return (
     <div className={classnames(Styles.container, className)}>
       {label && <label className={Styles.label} htmlFor={id}>{label}</label>}
@@ -11,6 +23,7 @@ const Input = ({ label, id, className, value, type, onChange, errorMessage, auto
         autoFocus={autoFocus}
         id={id}
         type={type}
+        role={role}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
